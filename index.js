@@ -1,11 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const connectToDB = require("./db");
-const UserModel = require("./schemas/userschemas");
-const CategoryModel = require("./schemas/foodcategoryschemas");
+const UserModel = require("./schemas/userSchemas");
+const CategoryModel = require("./schemas/foodCategorySchemas");
 
 const userRouter = require("./routes/userRoutes");
 const categoryRouter = require("./routes/categoryRoutes");
+const authenticationRouter = require("./routes/authentication");
 
 const app = express();
 const PORT = process.env.PORT || 999;
@@ -17,6 +18,8 @@ connectToDB();
 
 app.use("/user", userRouter);
 app.use("/foodcategory", categoryRouter);
+app.use("/authentication", authenticationRouter);
+
 app.get("/", (req, res) => {
   res.send("hello world, running");
 });

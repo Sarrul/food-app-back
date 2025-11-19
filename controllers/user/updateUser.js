@@ -1,4 +1,4 @@
-const UserModel = require("../../schemas/userschemas");
+const UserModel = require("../../schemas/userSchemas");
 
 const updateUser = async (req, res) => {
   console.log(req, "request");
@@ -10,8 +10,6 @@ const updateUser = async (req, res) => {
       {
         email,
         password,
-        phoneNumber,
-        address,
       },
       { new: true }
     );

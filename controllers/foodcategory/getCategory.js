@@ -1,4 +1,4 @@
-const CategoryModel = require("../../schemas/foodcategoryschemas");
+const CategoryModel = require("../../schemas/foodCategorySchemas");
 
 const getCategory = async (req, res) => {
   console.log(req, "request");
