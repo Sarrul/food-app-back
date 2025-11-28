@@ -1,7 +1,7 @@
 const CategoryModel = require("../../schemas/foodCategorySchemas");
 
 const createCategory = async (req, res) => {
-  console.log(req, "request");
+  // console.log(req, "request");
   const { categoryName } = req.body;
 
   console.log("create user working");
@@ -10,7 +10,7 @@ const createCategory = async (req, res) => {
       categoryName: categoryName,
     });
     console.log(data);
-    res.status(201).json(`createdCategory: ${data}`);
+    res.status(201).json(data);
   } catch (err) {
     res.status(500).json(`something went wrong: ${err}`);
   }

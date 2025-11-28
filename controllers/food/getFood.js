@@ -1,8 +1,8 @@
-const CategoryModel = require("../../schemas/foodCategorySchemas");
+const foodModel = require("../../schemas/foodSchemas");
 
-const getCategory = async (req, res) => {
+const getFood = async (req, res) => {
   try {
-    const data = await CategoryModel.find();
+    const data = await foodModel.find();
     // if (data.length <= 0) {
     //   throw new Error("category not found");
     // }
@@ -12,4 +12,4 @@ const getCategory = async (req, res) => {
   }
 };
 
-module.exports = getCategory;
+module.exports = getFood;

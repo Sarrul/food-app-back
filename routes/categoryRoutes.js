@@ -6,8 +6,8 @@ const updateCategory = require("../controllers/foodcategory/updateCategory");
 
 const categoryRouter = express.Router();
 
-categoryRouter.post("/", createCategory);
 categoryRouter.get("/", getCategory);
+categoryRouter.post("/", createCategory);
 categoryRouter.delete("/", deleteCategory);
 categoryRouter.put("/", updateCategory);
 
