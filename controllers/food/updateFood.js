@@ -2,7 +2,8 @@ const foodModel = require("../../schemas/foodSchemas");
 
 const updateFood = async (req, res) => {
   console.log(req, "request");
-  const { id, foodName, price, image, ingredients, category } = req.body;
+  const { foodName, price, image, ingredients, category } = req.body;
+  const { id } = req.params;
 
   try {
     const data = await foodModel.findByIdAndUpdate(
@@ -16,7 +17,7 @@ const updateFood = async (req, res) => {
       },
       { new: true }
     );
-    res.status(201).json(data);
+    res.status(200).json(data);
   } catch (err) {
     res.status(500).json(`something went wrong: ${err}`);
   }

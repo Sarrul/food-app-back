@@ -10,7 +10,7 @@ const foodRouter = express.Router();
 foodRouter.get("/", getFood);
 foodRouter.get("/:id", getFoodByCategory);
 foodRouter.post("/", createFood);
-foodRouter.delete("/", deleteFood);
-foodRouter.put("/", updateFood);
+foodRouter.delete("/:id", deleteFood);
+foodRouter.put("/:id", updateFood);
 
 module.exports = foodRouter;
