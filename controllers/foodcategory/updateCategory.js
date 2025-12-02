@@ -2,14 +2,14 @@ const CategoryModel = require("../../schemas/foodCategorySchemas");
 
 const updateCategory = async (req, res) => {
   console.log(req, "request");
-  const { categoryName } = req.body;
+  const { categoryName, id } = req.body;
 
   console.log("create user working");
   try {
     const data = await CategoryModel.findByIdAndUpdate(
       id,
       {
-        categoryName: categoryName,
+        categoryName,
       },
       { new: true }
     );
