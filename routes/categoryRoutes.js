@@ -8,7 +8,7 @@ const verifyJWT = require("../controllers/middleware/verifyJWT");
 const categoryRouter = express.Router();
 
 categoryRouter.get("/", getCategory);
-categoryRouter.post("/", verifyJWT, createCategory);
+categoryRouter.post("/", createCategory);
 categoryRouter.delete("/", verifyJWT, deleteCategory);
 categoryRouter.put("/", verifyJWT, updateCategory);
 
